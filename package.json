@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "devDependencies": {
+    "koa": "^2.12.0"
+  },
+  "dependencies": {}
+}
