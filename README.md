@@ -4,8 +4,10 @@
 ### install 
 ---
 > $  npm i -D mango-cache-control
-Usage
-创建一个 cache-control middleware
+
+### Usage
+---
+> 创建一个 cache-control middleware
 
 ```javascript
 app.use(cacheControl({
