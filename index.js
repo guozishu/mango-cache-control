@@ -66,8 +66,12 @@ module.exports = function (defaults) {
         if (Number.isInteger(options.sMaxAge)) {
           cacheControl.push(`s-maxage=${options.sMaxAge}`);
         }
-  
-        if (cacheControl.length && options.regExp.test(ctx.url)) {
+        
+        let regExpFlag = true;
+        if (options.regExp) {
+          regExpFlag = options.regExp.test(ctx.url);
+        }
+        if (cacheControl.length && !regExpFlag) {
           ctx.set('Cache-Control', cacheControl.join(','));
         }
         await next();

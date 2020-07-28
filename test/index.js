@@ -3,7 +3,8 @@ const cacheControl=require('../index');
 const app = new Koa();
 
 app.use(cacheControl({
-    maxAge:100
+    maxAge:100,
+    regExp:/\/api\//
 }));
 
 app.use(async (ctx, next) => {
