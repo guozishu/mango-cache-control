@@ -67,11 +67,11 @@ module.exports = function (defaults) {
           cacheControl.push(`s-maxage=${options.sMaxAge}`);
         }
         
-        let regExpFlag = true;
+        let regExpFlag = false;
         if (options.regExp) {
           regExpFlag = options.regExp.test(ctx.url);
         }
-        if (cacheControl.length && !regExpFlag) {
+        if (cacheControl.length && regExpFlag) {
           ctx.set('Cache-Control', cacheControl.join(','));
         }
         await next();
